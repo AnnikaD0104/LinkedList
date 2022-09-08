@@ -1,0 +1,48 @@
+public class LinkedList{
+    Node head;
+    public class Node
+    {
+        int data;
+        Node next;
+        
+    Node(int data)
+    {
+        this.data=data;
+        this.next=null;
+    }}
+    public void InsertAtFirst(int data)
+    {
+        Node node=new Node(data);
+        if(head==null)
+        {
+            head=node;
+            return;
+        }
+        node.next=head;
+        head=node;
+    }
+    public void display()
+    {
+        if(head==null)
+        {
+            System.out.println("List is Empty");
+            return;
+        }
+        Node currNode=head;
+        while(currNode!=null)
+        {
+            System.out.print(currNode.data+"->");
+            currNode=currNode.next;
+        }
+        System.out.println("NULL");
+    }
+    public static void main(String args[])
+    {
+        LinkedList L=new LinkedList();
+        L. InsertAtFirst(1);
+        L. InsertAtFirst(2);
+        L. InsertAtFirst(3);
+        L. InsertAtFirst(4);
+        L.display();
+    }
+}
